@@ -29,62 +29,101 @@ class CompaniesController extends Controller
             'name' => 'required|max:255',
         ]);*/
 
-        /*
-        if (isset($_POST) && !empty($_POST)) {
-            echo '<pre>';
-            print_r($request->website);
-            print_r($_POST);
-            echo '</pre>';
-            //exit;
-        }
-        */
-
         // add a new company
         if ($request->isMethod('post') && isset($request->name) && !empty($request->name)) {
+
+            $file = (isset($request->file()['logo']) && !empty($request->file()['logo']) ? $request->file()['logo'] : '');
+            $filename = '';
+            if (isset($file) && !empty($file)) {
+
+                echo '<pre>';
+                print_r($file);
+                echo '</pre>';
+
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move(storage_path('app/public'), $filename);
+            }
+
             $insert = DB::insert('INSERT INTO companies SET `name`=?, email=?, logo=?, website=?', [
                 $request->name,
                 (isset($request->email) && !empty($request->email) ? $request->email : null),
-                (isset($request->logo) && !empty($request->logo) ? $request->logo : null),
+                (isset($filename) && !empty($filename) ? $filename : null),
                 (isset($request->website) && !empty($request->website) ? $request->website : null),
             ]);
 
-            echo '<pre>';
-            print_r($request->file());
-            echo '</pre>';
-
-            foreach ($request->file() as $file) {
-                //foreach ($file as $f) {
-                $file->move(storage_path('app/public'), time().'_'.$file->getClientOriginalName());
-                //}
-            }
-
-            // storage/app/public
-
-            //echo $insert;
             /*echo '<pre>';
-            print_r($insert);
-            print_r($_POST);
+            print_r($insert['id']);
             echo '</pre>';
-            echo '-------------';*/
+            exit;*/
 
             if ($insert) {
-                // send email
-                echo 'send mail';
+                $company = DB::selectOne('SELECT * FROM companies WHERE id=?', [$insert['id']]);
 
-                Mail::send('emails.newcompany', array('key' => 'value'), function($message)
+                // send email
+                // тяжело протестировать локально
+                /*Mail::send('emails.newcompany', array('company' => $company, 'pathToFile' => asset('storage/'.$company['logo'].'')), function($message)
                 {
                     $message->to('phpdevops@gmail.com', 'Джон Смит')->subject('Add a new company on site!');
-                });
-
-                // storage/app/public
+                });*/
             }
-
-            //return redirect('/companies');
+            return redirect('/companies');
         }
 
-        return view('companies.add', [
-            //'companies' => $companies
-        ]);
+        return view('companies.add');
+    }
 
+    public function delete($id)
+    {
+        if (isset($id) && !empty($id)) {
+
+            // delete company
+            $delete = DB::delete('DELETE FROM companies WHERE id = ?', [$id]);
+
+            return redirect('/companies');
+        }
+    }
+
+    public function edit(Request $request, $id)
+    {
+        if (!isset($id) || !empty($id)) redirect('/companies');
+
+        // simple upload image
+        $file = (isset($request->file()['logo']) && !empty($request->file()['logo']) ? $request->file()['logo'] : '');
+        $filename = '';
+        if (isset($file) && !empty($file)) {
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(storage_path('app/public'), $filename);
+        }
+
+        // update data of company
+        if ($request->isMethod('post') && isset($request->name) && !empty($request->name)) {
+            $update = DB::update('UPDATE `companies` SET `name`=?, `email`=?, `logo`=?, `website`=? WHERE id=?', [
+                $request->name,
+                (isset($request->email) && !empty($request->email) ? $request->email : null),
+                (isset($filename) && !empty($filename) ? $filename : null),
+                (isset($request->website) && !empty($request->website) ? $request->website : null),
+                $id
+            ]);
+            return redirect('/companies');
+        }
+
+        // get company
+        $company = DB::selectOne('SELECT * FROM companies WHERE id=?', [$id]);
+
+        return view('companies.edit', [
+            'company' => $company
+        ]);
+    }
+
+    public function view(Request $request, $id)
+    {
+        if (!isset($id) || !empty($id)) redirect('/companies');
+
+        // get company
+        $company = DB::selectOne('SELECT * FROM companies WHERE id=?', [$id]);
+
+        return view('companies.view', [
+            'company' => $company
+        ]);
     }
 }

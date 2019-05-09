@@ -51,4 +51,42 @@ class EmployeesController extends Controller
             'companies' => $companies
         ]);
     }
+
+    public function edit(Request $request, $id)
+    {
+        if (!isset($id) || !empty($id)) redirect('/employees');
+
+        // update data of company
+        if ($request->isMethod('post') && isset($request->lastname) && !empty($request->lastname)) {
+            $update = DB::update('UPDATE `employees` SET `lastname`=?, `firstname`=?, `company_id`=?, `phone`=?, `email`=? WHERE id=?', [
+                $request->lastname,
+                $request->firstname,
+                $request->company_id,
+                (isset($request->phone) && !empty($request->phone) ? $request->phone : null),
+                (isset($request->email) && !empty($request->email) ? $request->email : null),
+                $id
+            ]);
+            return redirect('/employees');
+        }
+
+        // get companies
+        $companies = DB::select('SELECT * FROM companies ');
+        // get employee
+        $employee = DB::selectOne('SELECT * FROM employees WHERE id=?', [$id]);
+
+        return view('employees.edit', [
+            'employee' => $employee,
+            'companies' => $companies
+        ]);
+    }
+
+    public function delete(Request $request, $id)
+    {
+        if (!isset($id) || empty($id)) return redirect('/employees');
+
+        // delete employee
+        $delete = DB::delete('DELETE FROM employees WHERE id = ?', [$id]);
+
+        return redirect('/employees');
+    }
 }

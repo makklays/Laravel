@@ -11,7 +11,7 @@
             <button onclick="location.href='/employees/add'" class="btn btn-secondary" >Add a new employee</button>
         </div>
 
-        <?php if (isset($employees) && !empty($employees)): ?>
+        <?php if (isset($employees) && !empty($employees) && $employees->total()>0 ): ?>
             <table id="id-companies" class="table table-hover display" style="width:100%; margin: 20px 0;">
                 <thead class="thead-light">
                     <tr>
@@ -29,11 +29,11 @@
                         <tr>
                             <td><?=$employee->lastname?></td>
                             <td><?=$employee->firstname?></td>
-                            <td><?=$employee->company?></td>
+                            <td><a href="{{ url('/companies/view/'.$employee->company_id) }}"><?=$employee->company?></a></td>
                             <td><?=(!empty($employee->phone) ? $employee->phone : '-')?></td>
                             <td><?=(!empty($employee->email) ? $employee->email : '-')?></td>
-                            <td><a href="{{ url('/employees/edit?id='.$employee->id) }}">Edit</a></td>
-                            <td><a href="{{ url('/employees/del?id='.$employee->id) }}">Delete</a></td>
+                            <td><a href="{{ url('/employees/edit/'.$employee->id) }}">Edit</a></td>
+                            <td><a href="{{ url('/employees/del/'.$employee->id) }}" onclick="return confirm('Delete this employee?');" >Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -41,7 +41,9 @@
 
             <?php echo $employees->render(); ?>
         <?php else: ?>
-            <i>Not employees</i>
+            <div style="margin-top:50px;">
+                <i>Not employees</i>
+            </div>
         <?php endif; ?>
     </div>
 

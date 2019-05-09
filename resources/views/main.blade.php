@@ -106,9 +106,14 @@
         </div>
 
         <div class="links">
-            <a href="{{ url('/companies') }}">Companies</a>
-            <a href="{{ url('/employees') }}">Employees</a>
-            <a href="{{ url('/login') }}">Login</a>
+            <!--a href="{{ url('/companies') }}">Companies</a>
+            <a href="{{ url('/employees') }}">Employees</a -->
+            @auth
+                <a href="{{ url('/home') }}">Home</a>
+            @else
+                <a href="{{ url('/login') }}">Login</a>
+            @endauth
+
         </div>
     </div>
 </div>

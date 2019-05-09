@@ -11,7 +11,7 @@
             <button onclick="location.href='/companies/add'" class="btn btn-secondary" >Add a new company</button>
         </div>
 
-        <?php if (isset($companies) && !empty($companies)): ?>
+        <?php if (isset($companies) && !empty($companies) && $companies->total()): ?>
 
             <table id="id-companies" class="table table-hover display" style="width:100%; margin:20px 0;">
                 <thead class="thead-light">
@@ -29,10 +29,10 @@
                         <tr>
                             <td><?=$company->name?></td>
                             <td><?=(!empty($company->email) ? $company->email : '-')?></td>
-                            <td><?=(!empty($company->logo) ? $company->logo : '-')?></td>
+                            <td><?=(!empty($company->logo) ? '<img src="'.asset('storage/'.$company->logo.'').'" alt="not image" title="Image '.$company->name.'" style="width:100px;" />' : '-')?></td>
                             <td><?=(!empty($company->website) ? $company->website : '-')?></td>
-                            <td><a href="{{ url('/employees/edit?id='.$company->id) }}">Edit</a></td>
-                            <td><a href="{{ url('/employees/del?id='.$company->id) }}">Delete</a></td>
+                            <td><a href="{{ url('/companies/edit/'.$company->id) }}">Edit</a></td>
+                            <td><a href="{{ url('/companies/del/'.$company->id) }}" onclick="return confirm('Delete this company?');">Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -41,7 +41,9 @@
             <?php echo $companies->render(); ?>
 
         <?php else: ?>
-            <i>Not companies</i>
+            <div style="margin-top:50px;">
+                <i>Not companies</i>
+            </div>
         <?php endif; ?>
     </div>
 
