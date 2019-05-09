@@ -67,15 +67,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/companies') }}">{{ __('Companies') }}</a>
                             </li>
-                            <li class="nav-item">
+                            <!--li class="nav-item">
                                 <a class="nav-link" href="{{ url('/companies/add') }}">{{ __('Companies add') }}</a>
-                            </li>
+                            </li-->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/employees') }}">{{ __('Employees') }}</a>
                             </li>
-                            <li class="nav-item">
+                            <!--li class="nav-item">
                                 <a class="nav-link" href="{{ url('/employees/add') }}">{{ __('Employee add') }}</a>
-                            </li>
+                            </li-->
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

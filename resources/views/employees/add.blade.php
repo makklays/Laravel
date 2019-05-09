@@ -3,7 +3,14 @@
 
 @section('content')
 
-    <form action="" method="POST" class="text-center">
+    <form action="" method="POST">
+
+        <div class="form-group row" style="margin:5px 0 10px 0;">
+            <div class="col-md-4"></div>
+            <div class="col-md-6">
+                <h2>Add a new employee</h2>
+            </div>
+        </div>
 
         {{ csrf_field() }}
 

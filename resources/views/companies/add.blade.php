@@ -4,7 +4,14 @@
 
 @section('content')
 
-    <form action="" method="POST" class="text-center">
+    <form action="" method="POST" enctype="multipart/form-data" >
+
+        <div class="form-group row" style="margin:5px 0 10px 0;">
+            <div class="col-md-4"></div>
+            <div class="col-md-6">
+                <h2>Add a new company</h2>
+            </div>
+        </div>
 
         {{ csrf_field() }}
 
@@ -33,7 +40,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-6 text-center">
                 <div class="custom-file ">
-                    <input type="file" class="col-md-4 col-form-label " id="id-logo" >
+                    <input type="file" name="logo" class="col-md-4 col-form-label " id="id-logo" >
                     <label class="custom-file-label" for="id-logo">Add Logo</label>
                 </div>
             </div>

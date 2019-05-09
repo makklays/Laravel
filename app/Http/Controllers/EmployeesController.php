@@ -9,13 +9,23 @@ class EmployeesController extends Controller
 {
     public function showEmployees(Request $request)
     {
-        $companies = DB::select('SELECT * FROM companies ');
+        //$employees = DB::select('SELECT * FROM employees ');
+        $employees = DB::table('employees')->paginate(10);
 
-        $employees = DB::select('SELECT * FROM employees ');
+        if (isset($employees) && !empty($employees)) {
+            foreach ($employees as $k => &$emp) {
+                // add Name of company
+                if (isset($emp->company_id) && !empty($emp->company_id)) {
+                    $company = DB::selectOne('SELECT * FROM companies WHERE id=? ', [$emp->company_id]);
+                    $emp->company = $company->name;
+                } else {
+                    $emp->company = '';
+                }
+            }
+        }
 
         return view('employees.show', [
             'employees' => $employees,
-            'companies' => $companies
         ]);
     }
 
