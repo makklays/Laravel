@@ -5,7 +5,7 @@
 
     <div style="margin:0 100px;" >
 
-        <h2>Employees</h2>
+        <h2>Employees (<?=$employees->total()?>)</h2>
 
         <div class="text-left">
             <button onclick="location.href='/employees/add'" class="btn btn-secondary" >Add a new employee</button>

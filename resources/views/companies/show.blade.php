@@ -5,7 +5,7 @@
 
     <div class="" style="margin:0 100px;">
 
-        <h2>Companies</h2>
+        <h2>Companies (<?=$companies->total()?>)</h2>
 
         <div class="text-left">
             <button onclick="location.href='/companies/add'" class="btn btn-secondary" >Add a new company</button>
