@@ -40,7 +40,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-6 text-center">
                 <div class="custom-file ">
-                    <input type="file" name="logo" class="col-md-4 col-form-label " id="id-logo" >
+                    <input type="file" name="logo" accept="image/jpeg,image/png,image/gif" class="col-md-4 col-form-label " id="id-logo" >
                     <label class="custom-file-label" for="id-logo">Add Logo</label>
                 </div>
             </div>
