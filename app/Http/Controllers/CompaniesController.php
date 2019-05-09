@@ -18,8 +18,19 @@ class CompaniesController extends Controller
         //$companies = DB::select('SELECT * FROM companies ');
         $companies = DB::table('companies')->paginate(10);
 
+        if (isset($companies) && !empty($companies)) {
+            foreach($companies as &$company) {
+                $employees = DB::selectOne('SELECT count(id) as count FROM employees WHERE company_id=?', [$company->id]);
+                $company->count_employees = $employees->count;
+            }
+        }
+
+        /*echo '<pre>';
+        print_r($companies);
+        echo '</pre>';*/
+
         return view('companies.show', [
-            'companies' => $companies
+            'companies' => $companies,
         ]);
     }
 
@@ -36,9 +47,9 @@ class CompaniesController extends Controller
             $filename = '';
             if (isset($file) && !empty($file)) {
 
-                echo '<pre>';
+                /*echo '<pre>';
                 print_r($file);
-                echo '</pre>';
+                echo '</pre>';*/
 
                 $filename = time() . '_' . $file->getClientOriginalName();
                 $file->move(storage_path('app/public'), $filename);
@@ -51,11 +62,6 @@ class CompaniesController extends Controller
                 (isset($request->website) && !empty($request->website) ? $request->website : null),
             ]);
 
-            /*echo '<pre>';
-            print_r($insert['id']);
-            echo '</pre>';
-            exit;*/
-
             if ($insert) {
                 $company = DB::selectOne('SELECT * FROM companies WHERE id=?', [$insert['id']]);
 
@@ -66,7 +72,10 @@ class CompaniesController extends Controller
                     $message->to('phpdevops@gmail.com', 'Джон Смит')->subject('Add a new company on site!');
                 });*/
             }
-            return redirect('/companies');
+            return redirect('companies')->with([
+                'flash_message' => 'Your company, '.$request->name.' has been add successfully!',
+                'flash_type' => 'success'
+            ]);
         }
 
         return view('companies.add');
@@ -76,10 +85,26 @@ class CompaniesController extends Controller
     {
         if (isset($id) && !empty($id)) {
 
-            // delete company
-            $delete = DB::delete('DELETE FROM companies WHERE id = ?', [$id]);
+            // get company
+            $company = DB::selectOne('SELECT * FROM companies WHERE id = ?', [$id]);
 
-            return redirect('/companies');
+            if (isset($company) && !empty($company)) {
+                $fullname = $company->name;
+
+                // delete company
+                DB::delete('DELETE FROM companies WHERE id = ?', [$id]);
+
+                return redirect('companies')->with([
+                    'flash_message' => 'Your company, '.$fullname.' has been delete successfully!',
+                    'flash_type' => 'success'
+                ]);
+
+            } else {
+                return redirect('companies')->with([
+                    'flash_message' => 'Error! Company don\'t exists!',
+                    'flash_type' => 'danger'
+                ]);
+            }
         }
     }
 
@@ -97,14 +122,27 @@ class CompaniesController extends Controller
 
         // update data of company
         if ($request->isMethod('post') && isset($request->name) && !empty($request->name)) {
-            $update = DB::update('UPDATE `companies` SET `name`=?, `email`=?, `logo`=?, `website`=? WHERE id=?', [
-                $request->name,
-                (isset($request->email) && !empty($request->email) ? $request->email : null),
-                (isset($filename) && !empty($filename) ? $filename : null),
-                (isset($request->website) && !empty($request->website) ? $request->website : null),
-                $id
+
+            if (isset($filename) && !empty($filename)) {
+                DB::update('UPDATE `companies` SET `name`=?, `email`=?, `logo`=?, `website`=? WHERE id=?', [
+                    $request->name,
+                    (isset($request->email) && !empty($request->email) ? $request->email : null),
+                    (isset($filename) && !empty($filename) ? $filename : null),
+                    (isset($request->website) && !empty($request->website) ? $request->website : null),
+                    $id
+                ]);
+            } else {
+                DB::update('UPDATE `companies` SET `name`=?, `email`=?, `website`=? WHERE id=?', [
+                    $request->name,
+                    (isset($request->email) && !empty($request->email) ? $request->email : null),
+                    (isset($request->website) && !empty($request->website) ? $request->website : null),
+                    $id
+                ]);
+            }
+            return redirect('companies')->with([
+                'flash_message' => 'Your company, '.$request->name.' has been add successfully!',
+                'flash_type' => 'success'
             ]);
-            return redirect('/companies');
         }
 
         // get company
@@ -117,13 +155,17 @@ class CompaniesController extends Controller
 
     public function view(Request $request, $id)
     {
-        if (!isset($id) || !empty($id)) redirect('/companies');
+        if (!isset($id) || !empty($id)) redirect('companies');
 
         // get company
         $company = DB::selectOne('SELECT * FROM companies WHERE id=?', [$id]);
 
+        // count employee
+        $persons = DB::selectOne('SELECT count(id) as count FROM employees WHERE company_id=?', [$id]);
+
         return view('companies.view', [
-            'company' => $company
+            'company' => $company,
+            'count_employees' => $persons->count,
         ]);
     }
 }

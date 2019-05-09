@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class EmployeesController extends Controller
 {
-    public function showEmployees(Request $request)
+    public function showEmployees()
     {
         //$employees = DB::select('SELECT * FROM employees ');
         $employees = DB::table('employees')->paginate(10);
@@ -40,11 +40,14 @@ class EmployeesController extends Controller
                 $request->lastname,
                 $request->firstname,
                 $request->company_id,
-                (isset($request->email) && !empty($request->email) ? $request->email : null),
                 (isset($request->phone) && !empty($request->phone) ? $request->phone : null),
+                (isset($request->email) && !empty($request->email) ? $request->email : null),
             ]);
 
-            return redirect('/employees');
+            return redirect('/employees')->with([
+                'flash_message' => 'Your employee, '.$request->lastname.' '.$request->firstname.' has been add successfully!',
+                'flash_type' => 'success'
+            ]);
         }
 
         return view('employees.add', [
@@ -58,7 +61,7 @@ class EmployeesController extends Controller
 
         // update data of company
         if ($request->isMethod('post') && isset($request->lastname) && !empty($request->lastname)) {
-            $update = DB::update('UPDATE `employees` SET `lastname`=?, `firstname`=?, `company_id`=?, `phone`=?, `email`=? WHERE id=?', [
+            DB::update('UPDATE `employees` SET `lastname`=?, `firstname`=?, `company_id`=?, `phone`=?, `email`=? WHERE id=?', [
                 $request->lastname,
                 $request->firstname,
                 $request->company_id,
@@ -66,7 +69,11 @@ class EmployeesController extends Controller
                 (isset($request->email) && !empty($request->email) ? $request->email : null),
                 $id
             ]);
-            return redirect('/employees');
+
+            return redirect('employees')->with([
+                'flash_message' => 'Your employee, '.$request->lastname.' '.$request->firstname.' has been update successfully!',
+                'flash_type' => 'success'
+            ]);
         }
 
         // get companies
@@ -80,13 +87,36 @@ class EmployeesController extends Controller
         ]);
     }
 
-    public function delete(Request $request, $id)
+    public function delete($id)
     {
-        if (!isset($id) || empty($id)) return redirect('/employees');
+        if (!isset($id) || empty($id)) {
+            return redirect('employees')->with([
+                'flash_message' => 'Error! Don\'t have ID in url',
+                'flash_type' => 'danger'
+            ]);
+        }
+
+        // get employee
+        $employee = DB::selectOne('SELECT * FROM employees WHERE id = ?', [$id]);
 
         // delete employee
-        $delete = DB::delete('DELETE FROM employees WHERE id = ?', [$id]);
+        if (isset($employee) && !empty($employee)) {
+            // fullname employee
+            $fullname = $employee->lastname.' '.$employee->firstname;
 
-        return redirect('/employees');
+            // delete empoyee
+            DB::delete('DELETE FROM employees WHERE id = ?', [$id]);
+
+            return redirect('employees')->with([
+                'flash_message' => 'Your employee, '.$fullname.' has been delete successfully!',
+                'flash_type' => 'success'
+            ]);
+
+        } else {
+            return redirect('employees')->with([
+                'flash_message' => 'Error! Employee don\'t exists!',
+                'flash_type' => 'danger'
+            ]);
+        }
     }
 }

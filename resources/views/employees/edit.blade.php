@@ -56,7 +56,8 @@
 
         <div class="form-group row mb-0" style="margin:5px 0 10px 0;">
             <div class="col-md-8 offset-md-4">
-                <input type="submit" value="Edit employee" class="btn btn-secondary text-center" />
+                <input type="submit" value="Edit employee" class="btn btn-secondary text-center" style="margin-right:30px;" />
+                <a href="{{ url('employees') }}" >{{ __('Cancel') }}</a>
             </div>
         </div>
     </form>

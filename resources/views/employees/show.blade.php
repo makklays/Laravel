@@ -11,10 +11,13 @@
             <button onclick="location.href='/employees/add'" class="btn btn-secondary" >Add a new employee</button>
         </div>
 
+        @include('partials.flash')
+
         <?php if (isset($employees) && !empty($employees) && $employees->total()>0 ): ?>
             <table id="id-companies" class="table table-hover display" style="width:100%; margin: 20px 0;">
                 <thead class="thead-light">
                     <tr>
+                        <th>ID</th>
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>Company</th>
@@ -27,11 +30,12 @@
                 <tbody>
                     <?php foreach($employees as $employee): ?>
                         <tr>
+                            <td><?=$employee->id?></td>
                             <td><?=$employee->lastname?></td>
                             <td><?=$employee->firstname?></td>
                             <td><a href="{{ url('/companies/view/'.$employee->company_id) }}"><?=$employee->company?></a></td>
                             <td><?=(!empty($employee->phone) ? $employee->phone : '-')?></td>
-                            <td><?=(!empty($employee->email) ? $employee->email : '-')?></td>
+                            <td><?=(!empty($employee->email) ? '<a href="mailto:'.$employee->email.'">'.$employee->email.'</a>' : '-')?></td>
                             <td><a href="{{ url('/employees/edit/'.$employee->id) }}">Edit</a></td>
                             <td><a href="{{ url('/employees/del/'.$employee->id) }}" onclick="return confirm('Delete this employee?');" >Delete</a></td>
                         </tr>
