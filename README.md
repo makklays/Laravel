@@ -9,14 +9,13 @@
 #### EN: 
 Assignment test for knowledge Laravel 5.
 
-##### ES: 
+#### ES: 
 Prueba de asignación de conocimientos a Laravel 5.
 
-##### IT: 
+#### IT: 
 Test di assegnazione per conoscenza Laravel 5.
 
-##### CH: 
+#### CH: 
 知识Laravel 5的作业测试
-
 
 Site: [makklays.com.ua](http://makklays.com.ua?from=github)
