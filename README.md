@@ -2,7 +2,7 @@
 
 ![Laravel_Logo](https://github.com/makklays/Laravel/blob/master/public/img/laravel.png)
 
-Site: [makklays.com.ua](http://makklays.com.ua?from=github)
+Site: [makklays.com.ua](http://makklays.com.ua?from=github_laravel)
 
 [EN](https://github.com/makklays/Laravel/blob/master/README.md#ua) - 
 [ES](https://github.com/makklays/Laravel/blob/master/README.md#es) - 
