@@ -4,6 +4,12 @@
 
 Site: [makklays.com.ua](http://makklays.com.ua?from=github)
 
+[EN](https://github.com/makklays/Laravel/edit/master/README.md#EN)
+[ES](https://github.com/makklays/Laravel/edit/master/README.md#ES)
+[IT](https://github.com/makklays/Laravel/edit/master/README.md#IT)
+[UA](https://github.com/makklays/Laravel/edit/master/README.md#UA)
+[CH](https://github.com/makklays/Laravel/edit/master/README.md#CH)
+
 #### UA: 
 Виконане завдання i приклади коду для перевiрки знань Laravel 5. <br/>
 Створити адмiн панель для управлiння компанiями. <br/>
