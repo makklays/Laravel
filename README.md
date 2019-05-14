@@ -1,12 +1,12 @@
 # Laravel
 
-###### UA: 
+#### UA: 
 Завдання для перевiрки знань Laravel 5. 
 
-##### RU: 
+#### RU: 
 Задание для проверки знаний Laravel 5.
 
-##### EN: 
+#### EN: 
 Assignment test for knowledge Laravel 5.
 
 ##### ES: 
