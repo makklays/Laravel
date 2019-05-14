@@ -2,6 +2,8 @@
 
 ![Laravel_Logo](https://github.com/makklays/Laravel/blob/master/public/img/laravel.png)
 
+Site: [makklays.com.ua](http://makklays.com.ua?from=github)
+
 #### UA: 
 Завдання для перевiрки знань Laravel 5. <br/>
 Створити адмiн панель для управлiння компанiями. <br/>
@@ -26,14 +28,37 @@
 Завдання має мати декiлька commit-iв, і весь проект повинен бути завантажений у Github. <br/><br/>
 Дякую! <br/><br/>
 
-#### RU: 
-Задание для проверки знаний Laravel 5.
+<!--#### RU: 
+Задание для проверки знаний Laravel 5. -->
 
 #### EN: 
 Assignment test for knowledge Laravel 5.
+The task for the Laravel 5 knowledge check is completed.
+Create an admin panel for managing your company.
+This is a management project for employers and companies. mini-CRM
+
+Requirements:
+- Base Laravel Auth: the ability to log on as an administrator;
+- Use the gray databases to create the first user with email admin@admin.com and the password "password";
+- CRUD functionality (creation / reading / updating / deleting) for two menu items: companies and employees;
+- The database of companies database consists of the following fields: Name (required), e-mail, logo (minimum 100 × 100), website;
+- The table of employees of the database consists of the following fields: Name (required), last name (required), Company (external key for companies), e-mail, phone;
+- Use migration databases to create these schemes above;
+- Store company logos in the storage/app/public folder and make them available with /public;
+- Use Laravel's main controllers with default methods - index, create, save, etc .;
+- Use the Laravel validation function using the Request classes;
+- To show the list of companies / employees, use the Laravel paging, 10 entries per page;
+- Use Laravel make: auth as the default Bootstrap theme based on the design, but delete the registration option;
+- Use the Datatables.net library to display the table - without server-side rendering (optional);
+- Use a more complex interface theme like AdminLTE);
+- Email Notification: send email when you enter a new company (use Mailgun or Mailtrap);
+
+The task should have several commit and the entire project must be downloaded to Github.
+
+Thanks! <br/><br/>
 
 #### ES: 
-Prueba de asignación de conocimientos a Laravel 5. <br/>
+La tarea para la comprobación de conocimientos de Laravel 5 se ha completado. <br/>
 Laravel 5 tareas de prueba de conocimiento. <br/>
 Crea un panel de administración para gestionar tu empresa.<br/>
 Este es un proyecto de gestión para empresarios y empresas. mini-CRM<br/>
@@ -84,6 +109,28 @@ La sfida è quella di avere diversi commit-IB, e l'intero progetto dovrebbe esse
 Grazie! <br/><br/>
 
 #### CH: 
-知识Laravel 5的作业测试
+Laravel 5知識檢查的任務已完成。<br/>
+創建管理面板以管理您的公司。 <br/>
+這是雇主和公司的管理項目。迷你CRM。 <br/>
+
+要求：
+ -  Base Laravel Auth：以管理員身份登錄的能力;
+ - 使用灰色數據庫創建第一個用戶，電子郵件為admin@admin.com，密碼為“password”;
+ - 兩個菜單項的CRUD功能（創建/讀取/更新/刪除）：公司和員工;
+ - 公司數據庫數據庫包括以下字段：名稱（必填），電子郵件，徽標（最小100×100），網站;
+ - 數據庫員工表包括以下字段：名稱（必填），姓氏（必填），公司（公司外部密鑰），電子郵件，電話;
+ - 使用遷移數據庫創建上述方案;
+ - 將公司徽標存儲在storage/app/public文件夾中，並將其與/public一起使用;
+ - 使用Laravel的主控制器和默認方法 - 索引，創建，保存等;
+ - 使用Request類使用Laravel驗證函數;
+ - 要顯示公司/員工列表，請使用Laravel分頁，每頁10個條目;
+ - 使用Laravel make：auth作為基於設計的默認Bootstrap主題，但刪除註冊選項;
+ - 使用Datatables.net庫顯示表 - 無需服務器端呈現（可選）;
+ - 使用更複雜的界面主題，如AdminLTE）;
+ - 電子郵件通知：當您進入新公司時發送電子郵件（使用Mailgun或Mailtrap）;
+
+該任務應該有幾個提交，整個項目必須下載到Github。<br/><br/>
+
+謝謝！
 
 Site: [makklays.com.ua](http://makklays.com.ua?from=github)
