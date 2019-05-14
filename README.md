@@ -36,8 +36,8 @@ Assignment test for knowledge Laravel 5.
 Prueba de asignación de conocimientos a Laravel 5.
 
 #### IT: 
-La sfida per la verifica della conoscenza Laravel 5.
-Nuovo pannello di amministrazione delle società di gestione.
+La sfida per la verifica della conoscenza Laravel 5.<br/>
+Nuovo pannello di amministrazione delle società di gestione. <br/>
 Questo progetto per la gestione e dipendenti della Società. mini-CRM.
 
 requisiti:
