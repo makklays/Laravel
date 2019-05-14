@@ -124,7 +124,7 @@ Laravel 5知識檢查的任務已完成。<br/>
  - 使用Laravel的主控制器和默認方法 - 索引，創建，保存等;
  - 使用Request類使用Laravel驗證函數;
  - 要顯示公司/員工列表，請使用Laravel分頁，每頁10個條目;
- - 使用Laravel make：auth作為基於設計的默認Bootstrap主題，但刪除註冊選項;
+ - 使用Laravel make:auth作為基於設計的默認Bootstrap主題，但刪除註冊選項;
  - 使用Datatables.net庫顯示表 - 無需服務器端呈現（可選）;
  - 使用更複雜的界面主題，如AdminLTE）;
  - 電子郵件通知：當您進入新公司時發送電子郵件（使用Mailgun或Mailtrap）;
