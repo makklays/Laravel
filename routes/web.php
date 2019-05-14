@@ -137,6 +137,23 @@ Route::get('/test-result', function () {
     ]);
 });
 
+/* packages */
+Route::get('/packages', [
+    'as' => 'packages', 'uses' => 'PackageController@listPackages'
+]);
+Route::match(['get','post'], '/package/{id}', [
+    'as' => 'package', 'uses' => 'PackageController@package'
+])->where(['id' => '[0-9]+']);
+Route::match(['get','post'], '/package/payment_success', [ // post method
+    'uses' => 'PackageController@payment_success'
+]);
+Route::match(['get','post'], '/package/payment_cancel', [ // post method
+    'uses' => 'PackageController@payment_cancel'
+]);
+Route::match(['get','post'], '/package/payment_notify', [ // post method
+    'uses' => 'PackageController@payment_notify'
+]);
+
 
 /*Route::group(['as' => 'admin::'], function () {
     Route::get('companies', ['as' => 'companies', function () {

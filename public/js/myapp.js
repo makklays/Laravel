@@ -1,5 +1,7 @@
 
-$(document).ready(function() {
-    $('#id-companies').DataTable();
-    $('#id-employees').DataTable();
-});
+//$(document).ready(function() {
+
+    //$('#id-companies').DataTable();
+    //$('#id-employees').DataTable();
+
+//});
