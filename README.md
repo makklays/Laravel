@@ -24,7 +24,7 @@
 - Повідомлення електронною поштою: надсилайте електронну пошту, коли вводиться нова компанія (використовуйте Mailgun або Mailtrap);
 
 Завдання має мати декiлька commit-iв, і весь проект повинен бути завантажений у Github. <br/><br/>
-Дякую!
+Дякую! <br/><br/>
 
 #### RU: 
 Задание для проверки знаний Laravel 5.
@@ -56,7 +56,7 @@ Requisitos:
 
 La tarea debe tener varios confirmaciones y todo el proyecto debe descargarse a Github.
 
-Gracias
+Gracias <br/><br/>
 
 #### IT: 
 La sfida per la verifica della conoscenza Laravel 5.<br/>
@@ -81,7 +81,7 @@ requisiti:
 
 La sfida è quella di avere diversi commit-IB, e l'intero progetto dovrebbe essere caricato a Github.
 
-Grazie!
+Grazie! <br/><br/>
 
 #### CH: 
 知识Laravel 5的作业测试
