@@ -3,8 +3,8 @@
 ![Laravel_Logo](https://github.com/makklays/Laravel/blob/master/public/img/laravel.png)
 
 #### UA: 
-Завдання для перевiрки знань Laravel 5. 
-Створити адмiн панель для управлiння компанiями.
+Завдання для перевiрки знань Laravel 5. <br/>
+Створити адмiн панель для управлiння компанiями. <br/>
 Це проект по управлiнню працiвниками та компанiями. mini-CRM. 
 
 Вимоги:
