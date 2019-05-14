@@ -1,4 +1,4 @@
-# Laravel
+# Example code for Laravel and completed task / Código de ejemplo para Laravel y tarea completada
 
 ![Laravel_Logo](https://github.com/makklays/Laravel/blob/master/public/img/laravel.png)
 
