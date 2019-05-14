@@ -33,7 +33,30 @@
 Assignment test for knowledge Laravel 5.
 
 #### ES: 
-Prueba de asignación de conocimientos a Laravel 5.
+Prueba de asignación de conocimientos a Laravel 5. <br/>
+Laravel 5 tareas de prueba de conocimiento. <br/>
+Crea un panel de administración para gestionar tu empresa.<br/>
+Este es un proyecto de gestión para empresarios y empresas. mini-CRM<br/>
+
+Requisitos:
+- Base Laravel Auth: la capacidad de iniciar sesión como administrador;
+- Utilice las bases de datos grises para crear el primer usuario con el correo electrónico admin@admin.com y la contraseña "contraseña";
+- Funcionalidad CRUD (creación / lectura / actualización / eliminación) para dos elementos del menú: empresas y empleados;
+- La base de datos de la base de datos de las empresas consta de los siguientes campos: Nombre (requerido), correo electrónico, logotipo (mínimo 100 × 100), sitio web;
+- La tabla de empleados de la base de datos consta de los siguientes campos: Nombre (obligatorio), apellido (obligatorio), Empresa (clave externa para las empresas), correo electrónico, teléfono;
+- Utilice las bases de datos de migración para crear estos esquemas de arriba;
+- Almacene los logotipos de la compañía en la carpeta de storage/app/public y haga que estén disponibles con /public;
+- Utilice los controladores principales de Laravel con métodos predeterminados: indexar, crear, guardar, etc .;
+- Utilice la función de validación de Laravel usando las clases de solicitud;
+- Para mostrar la lista de empresas / empleados, use la paginación de Laravel, 10 entradas por página;
+- Use Laravel make: auth como el tema predeterminado de Bootstrap basado en el diseño, pero elimine la opción de registro;
+- Utilice la biblioteca Datatables.net para mostrar la tabla, sin la representación del lado del servidor (opcional);
+- Utilice un tema de interfaz más complejo como AdminLTE);
+- Notificación por correo electrónico: envíe un correo electrónico cuando ingrese a una nueva compañía (use Mailgun o Mailtrap);
+
+La tarea debe tener varios confirmaciones y todo el proyecto debe descargarse a Github.
+
+Gracias
 
 #### IT: 
 La sfida per la verifica della conoscenza Laravel 5.<br/>
