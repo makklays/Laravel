@@ -40,7 +40,7 @@ Este es un proyecto de gestión para empresarios y empresas. mini-CRM<br/>
 
 Requisitos:
 - Base Laravel Auth: la capacidad de iniciar sesión como administrador;
-- Utilice las bases de datos grises para crear el primer usuario con el correo electrónico admin@admin.com y la contraseña "contraseña";
+- Utilice las bases de datos grises para crear el primer usuario con el correo electrónico admin@admin.com y la contraseña "password";
 - Funcionalidad CRUD (creación / lectura / actualización / eliminación) para dos elementos del menú: empresas y empleados;
 - La base de datos de la base de datos de las empresas consta de los siguientes campos: Nombre (requerido), correo electrónico, logotipo (mínimo 100 × 100), sitio web;
 - La tabla de empleados de la base de datos consta de los siguientes campos: Nombre (obligatorio), apellido (obligatorio), Empresa (clave externa para las empresas), correo electrónico, teléfono;
