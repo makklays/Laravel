@@ -42,7 +42,7 @@ Questo progetto per la gestione e dipendenti della Società. mini-CRM.
 
 requisiti:
 - Il principale laravel Auth: la possibilità di accedere come amministratore;
-- Utilizzare il database EDS per creare la prima e-mail dell'utente admin@admin.com e password "password";
+- Utilizzare seed il database per creare la prima e-mail dell'utente admin@admin.com e password "password";
 - La funzionalità del CRUD (creazione / lettura / aggiornamento / delete) per due voci di menu: le imprese ei lavoratori;
 - banca dati Tabella delle imprese è costituito dai seguenti campi: Nome logo (richiesto) Mail (minimo 100 × 100), un sito web;
 - dipendenti griglia DB è costituito dai seguenti campi: Nome (richiesto) Cognome (richiesto) Company (chiave esterna per le aziende), e-mail, telefono;
