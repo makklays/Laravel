@@ -1,6 +1,6 @@
 # Laravel
 
-![screenshot of sample](https://github.com/makklays/Laravel/blob/master/public/img/laravel.png)
+![screenshot](https://github.com/makklays/Laravel/blob/master/public/img/laravel.png)
 
 #### UA: 
 Завдання для перевiрки знань Laravel 5. 
