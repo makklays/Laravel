@@ -4,11 +4,11 @@
 
 Site: [makklays.com.ua](http://makklays.com.ua?from=github)
 
-[EN](https://github.com/makklays/Laravel/edit/master/README.md#EN)
-[ES](https://github.com/makklays/Laravel/edit/master/README.md#ES)
-[IT](https://github.com/makklays/Laravel/edit/master/README.md#IT)
-[UA](https://github.com/makklays/Laravel/edit/master/README.md#UA)
-[CH](https://github.com/makklays/Laravel/edit/master/README.md#CH)
+[EN](https://github.com/makklays/Laravel/blob/master/README.md#ua)  
+[ES](https://github.com/makklays/Laravel/blob/master/README.md#es)  
+[IT](https://github.com/makklays/Laravel/blob/master/README.md#it)  
+[UA](https://github.com/makklays/Laravel/blob/master/README.md#ua)  
+[CH](https://github.com/makklays/Laravel/blob/master/README.md#ch)  
 
 #### UA: 
 Виконане завдання i приклади коду для перевiрки знань Laravel 5. <br/>
