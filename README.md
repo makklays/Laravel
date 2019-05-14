@@ -5,7 +5,7 @@
 Site: [makklays.com.ua](http://makklays.com.ua?from=github)
 
 #### UA: 
-Завдання для перевiрки знань Laravel 5. <br/>
+Виконане завдання i приклади коду для перевiрки знань Laravel 5. <br/>
 Створити адмiн панель для управлiння компанiями. <br/>
 Це проект по управлiнню працiвниками та компанiями. mini-CRM. 
 
@@ -32,7 +32,7 @@ Site: [makklays.com.ua](http://makklays.com.ua?from=github)
 Задание для проверки знаний Laravel 5. -->
 
 #### EN: 
-Assignment test for knowledge Laravel 5.
+Assignment test and code for knowledge Laravel 5.
 The task for the Laravel 5 knowledge check is completed.
 Create an admin panel for managing your company.
 This is a management project for employers and companies. mini-CRM
