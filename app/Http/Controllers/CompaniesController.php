@@ -195,7 +195,7 @@ class CompaniesController extends Controller
         ]);
     }
 
-    public function view(Request $request, $id) // TODO: добавить customRequest вместо Request :)
+    public function view(Request $request, $id) 
     {
         // Only loggined
         if (!Auth::check()) return redirect('/');
