@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * На примере Компаний - простой пример перализации CRUD (Create Read Update Delete)
+ * На примере Сотрудников - простой пример перализации CRUD (Create Read Update Delete)
  **/
 class EmployeesController extends Controller
 {
