@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * На примере Компаний - простой пример перализации CRUD (Create Read Update Delete)
+ **/
 class EmployeesController extends Controller
 {
     public function showEmployees()
