@@ -19,6 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('email', 255)->nullable();
             $table->string('logo', 255)->nullable();
             $table->string('website', 255)->nullable();
+            $table->integer('is_checked')->default(0);
             $table->timestamps();
         });
     }

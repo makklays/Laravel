@@ -22,21 +22,19 @@ class CvsTableSeeder extends Seeder
             'lastname' => 'Kuziv',
             'gender' => 'man',
             'birthday' => '411868800',
+
             'email' => 'makklays@gmail.com',
             'phone' => '+38 098 870 5397',
             'city' => 'Белая Церковь',
             'site' => 'makklays.com.ua',
             'citizenship' => 'ukrainian',
             'typejob' => 2,
+            'otrasl' => 2,
             'salary' => 1100,
             'currency' => 'eur',
             'about' => 'description text. description text. ',
-            'has_car' => 1,
-            'has_b' => 1,
-            'has_c' => 1,
-            'viewes' => 11,
-            'created_at' => 1566214175,
-            'modified_at' => 1566214175,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time()),
         ]);
         $this->command->getOutput()->progressAdvance();
 
@@ -56,14 +54,12 @@ class CvsTableSeeder extends Seeder
             'site' => 'makklays.com.ua',
             'citizenship' => 'ukrainian',
             'typejob' => 1,
+            'otrasl' => 1,
             'salary' => 1500,
             'currency' => 'eur',
             'about' => 'description text. description text. ',
-            'has_car' => 1,
-            'has_b' => 1,
-            'viewes' => 11,
-            'created_at' => 1566214175,
-            'modified_at' => 1566214175,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time()),
         ]);
         $this->command->getOutput()->progressAdvance();
 
@@ -83,15 +79,12 @@ class CvsTableSeeder extends Seeder
             'site' => 'makklays.com.ua',
             'citizenship' => 'ukrainian',
             'typejob' => 1,
+            'otrasl' => 3,
             'salary' => 2000,
             'currency' => 'eur',
             'about' => 'description text. description text. ',
-            'has_car' => 1,
-            'has_b' => 1,
-            'has_c' => 1,
-            'viewes' => 11,
-            'created_at' => 1566214175,
-            'modified_at' => 1566214175,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time()),
         ]);
         $this->command->getOutput()->progressAdvance();
 
@@ -111,15 +104,12 @@ class CvsTableSeeder extends Seeder
             'site' => 'makklays.com.ua',
             'citizenship' => 'ukrainian',
             'typejob' => 1,
+            'otrasl' => 2,
             'salary' => 2000,
             'currency' => 'eur',
             'about' => 'description text. description text. ',
-            'has_car' => 0,
-            'has_b' => 0,
-            'has_c' => 0,
-            'viewes' => 11,
-            'created_at' => 1566214175,
-            'modified_at' => 1566214175,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time()),
         ]);
         $this->command->getOutput()->progressAdvance();
 
@@ -139,15 +129,12 @@ class CvsTableSeeder extends Seeder
             'site' => 'makklays.com.ua',
             'citizenship' => 'ukrainian',
             'typejob' => 1,
+            'otrasl' => 2,
             'salary' => 2300,
             'currency' => 'eur',
             'about' => 'description text. description text. ',
-            'has_car' => 1,
-            'has_b' => 1,
-            'has_c' => 0,
-            'viewes' => 11,
-            'created_at' => 1566214175,
-            'modified_at' => 1566214175,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time()),
         ]);
         $this->command->getOutput()->progressAdvance();
 
@@ -167,15 +154,12 @@ class CvsTableSeeder extends Seeder
             'site' => 'makklays.com.ua',
             'citizenship' => 'ukrainian',
             'typejob' => 2,
+            'otrasl' => 2,
             'salary' => 1100,
             'currency' => 'eur',
             'about' => 'description text. description text. ',
-            'has_car' => 1,
-            'has_b' => 1,
-            'has_c' => 1,
-            'viewes' => 11,
-            'created_at' => 1566214175,
-            'modified_at' => 1566214175,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time()),
         ]);
         $this->command->getOutput()->progressAdvance();
 
@@ -195,14 +179,12 @@ class CvsTableSeeder extends Seeder
             'site' => 'makklays.com.ua',
             'citizenship' => 'ukrainian',
             'typejob' => 1,
+            'otrasl' => 2,
             'salary' => 1500,
             'currency' => 'eur',
             'about' => 'description text. description text. ',
-            'has_car' => 1,
-            'has_b' => 1,
-            'viewes' => 11,
-            'created_at' => 1566214175,
-            'modified_at' => 1566214175,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time()),
         ]);
         $this->command->getOutput()->progressAdvance();
 
