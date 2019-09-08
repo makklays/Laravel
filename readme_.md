@@ -1,14 +1,14 @@
 # Example code for Laravel and completed task <br/>Código de ejemplo para Laravel y tarea completada
 
-![Laravel_Logo](https://github.com/makklays/Laravel/blob/master/public/img/laravel.png)
+![Laravel_Logo](https://github.com/makklays/Laravel/blob/master/public/img/screenshots/Screenshot_2.png)
 
 Site: [makklays.com.ua](http://makklays.com.ua?from=github_laravel)
 
-[EN](https://github.com/makklays/Laravel/blob/master/README.md#ua) - 
-[ES](https://github.com/makklays/Laravel/blob/master/README.md#es) - 
-[IT](https://github.com/makklays/Laravel/blob/master/README.md#it) - 
-[UA](https://github.com/makklays/Laravel/blob/master/README.md#ua) - 
-[CH](https://github.com/makklays/Laravel/blob/master/README.md#ch) 
+[EN](https://github.com/makklays/Laravel#ua) - 
+[ES](https://github.com/makklays/Laravel#es) - 
+[IT](https://github.com/makklays/Laravel#it) - 
+[UA](https://github.com/makklays/Laravel#ua) - 
+[CH](https://github.com/makklays/Laravel#ch) 
 
 #### UA: 
 **Виконане завдання i приклади коду для перевiрки знань Laravel 5.** <br/><br/>
