@@ -58,4 +58,16 @@ class addCvsRequest extends FormRequest
             'has_tb' => ''
         ];
     }
+    
+    // For API route/api.php - when validate 
+    public function withValidator($validator)
+    {
+        $validator->after(function ($validator) {
+            return response()->json([
+                'status' => 'failure',
+                'message' => 'Bad Request',
+                'errors' => $validator->errors(),
+            ]);
+        });
+    }
 }
