@@ -42,4 +42,16 @@ class companyRequest extends FormRequest
             'website.required'  => 'Поле обязательно для заполнения',
         ];
     }
+    
+    // for api from /route/api.php - when validate 
+    public function withValidator($validator)
+    {
+        $validator->after(function ($validator) {
+            return response()->json([
+                'status' => 'failure',
+                'message' => 'Bad Request',
+                'errors' => $validator->errors(),
+            ]);
+        });
+    }
 }
